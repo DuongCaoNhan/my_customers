@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>My Customers</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css">
+  <link rel="stylesheet" href="main.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+
+  <div id="vue">
+    <div class="container loginContainer" v-if="!authenticated">
+      <button @click="login()">Login</button>
+    </div>
+    <div class="container" v-if="authenticated">
+      <div class="headerWrapper">
+        <h1 class="heading">My Customers</h1>
+        <button @click="logout()">Logout</button>
+      </div>
+
+      <hr>
+      <div class="row">
+        <form class="column column-50 column-offset-25" v-on:submit="handleFormSubmit">
+          <fieldset>
+            <label for="nameField">Name</label>
+            <input type="text" placeholder="Name" id="nameField" v-model="formValues.name">
+            <label for="emailField">E-Mail</label>
+            <input type="text" placeholder="Email" id="emailField" v-model="formValues.email">
+            <label for="telField">Telephone</label>
+            <input type="text" placeholder="Telephone" id="telField" v-model="formValues.tel">
+            <label for="statusSelect">Status</label>
+            <select name="statusSelect" id="statusSelect" v-model="formValues.status">
+              <option selected>Prospect</option>
+              <option>Contacted</option>
+              <option>Saved</option>
+            </select>
+            <label for="descriptionField">Description</label>
+            <textarea name="descriptionField" rows="8" cols="40" v-model="formValues.description"></textarea>
+            <input type="submit" value="Submit" v-show="!update">
+            <input type="submit" value="Update" v-show="update">
+          </fieldset>
+        </form>
+      </div>
+
+      <hr>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Telephone</th>
+            <th>E-Mail</th>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="customer in customers">
+            <td>{{customer.name}}</td>
+            <td>{{customer.telephone}}</td>
+            <td><a href="mailto:{{customer.email}}">{{customer.email}}</a></td>
+            <td>{{customer.status}}</td>
+            <td>{{customer.description}}</td>
+            <td><button v-on:click="deleteItem($index)" class="deleteButton">Delete</button><button v-on:click="updateItem($index)" class="updateButton">Update</button><td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Vue.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
+  <!-- Auth0 Lock script -->
+  <script src="//cdn.auth0.com/js/lock-9.1.min.js"></script>
+  <!-- main js -->
+  <script src="main.js"></script>
+</body>
+</html>

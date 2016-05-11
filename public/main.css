@@ -1,0 +1,33 @@
+a {
+  color: #e74c3c;
+}
+
+.deleteButton {
+  margin-right: 5px;
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+button {
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+}
+
+input[type="submit"] {
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+  width: 100%;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
