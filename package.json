@@ -1,0 +1,26 @@
+{
+  "name": "my-customer-api",
+  "version": "1.0.0",
+  "description": "the _mevn_ stack is hot!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasmus1610/my_customers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rasmus1610/my_customers/issues"
+  },
+  "homepage": "https://github.com/rasmus1610/my_customers#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-jwt": "^3.4.0",
+    "mongoose": "^4.4.16"
+  }
+}
