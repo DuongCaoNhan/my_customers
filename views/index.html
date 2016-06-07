@@ -75,7 +75,7 @@
             <td><a href="mailto:{{customer.email}}">{{customer.email}}</a></td>
             <td>{{customer.status}}</td>
             <td>{{customer.description}}</td>
-            <td><button v-on:click="deleteItem($index)" class="deleteButton">Delete</button><button v-on:click="updateItem($index)" class="updateButton">Update</button><td>
+            <td><button @click="deleteItem($index)" class="deleteButton">Delete</button><button @click="updateItem($index)" class="updateButton">Update</button><td>
           </tr>
         </tbody>
       </table>

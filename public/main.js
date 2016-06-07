@@ -1,4 +1,4 @@
-//Cnfig
+//Config
 Vue.http.options.emulateJSON = true;
 
 new Vue({
@@ -7,10 +7,10 @@ new Vue({
   data: {
     customers: [],
     formValues: {
-      name: "",
-      email: "",
-      tel: "",
-      description: "",
+      name: '',
+      email: '',
+      tel: '',
+      description: '',
       status: ''
     },
     authenticated: false,
@@ -20,10 +20,10 @@ new Vue({
   methods: {
     resetForm: function() {
       this.formValues = {
-        name: "",
-        email: "",
-        tel: "",
-        description: "",
+        name: '',
+        email: '',
+        tel: '',
+        description: '',
         status: ''
       };
     },

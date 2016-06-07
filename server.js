@@ -62,10 +62,10 @@ router.route("/api/customers")
 //Routes on "/customers/:customer_id" to update or delete customer
 router.route("/api/customers/:customer_id")
 
-  //get single Customer by it's id
+  //get single Customer by its id
   .get(customerController.getBeer)
 
-  //update single customer by it's id
+  //update single customer by its id
   .put(customerController.putBeer)
 
   //delete single customer by id
